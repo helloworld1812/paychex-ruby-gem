@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "paychex"
+require "webmock/rspec"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -11,4 +12,28 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+def stub_delete(path)
+  stub_request(:delete, Paychex.endpoint + path)
+end
+
+def stub_get(path)
+  stub_request(:get, Paychex.endpoint + path)
+end
+
+def stub_post(path)
+  stub_request(:post, Paychex.endpoint + path)
+end
+
+def stub_put(path)
+  stub_request(:put, Paychex.endpoint + path)
+end
+
+def fixture_path
+  File.expand_path("../fixtures", __FILE__)
+end
+
+def fixture(file)
+  File.new(fixture_path + "/" + file)
 end

@@ -41,18 +41,4 @@ RSpec.describe Paychex do
       expect(Paychex.format).to eq(:json)
     end
   end
-
-  describe "get auth token with some expirt using client id and secret" do
-    it "should return auth token" do
-      client = Paychex.client()
-      response = client.authorize({
-        grant_type: "client_credentials",
-        client_id: "client_id",
-        client_secret: "client_secret",
-      })
-      expect(response.status).to eq(200)
-      expect(response.body["access_token"]).not_to eq(nil)
-      expect(response.body["expires_in"]).to be > 0
-    end
-  end
 end
