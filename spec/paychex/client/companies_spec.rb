@@ -10,6 +10,7 @@ RSpec.describe "Paychex" do
       response = client.linked_companies()
       expect(response.status).to eq(200)
       expect(response.body["metadata"]["contentItemCount"]).to be 1
+      expect(response.body["content"].count).to be 1
     end
   end
 end
