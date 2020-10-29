@@ -5,6 +5,11 @@ module Paychex
       def workers(company_id, options = {})
         get("companies/#{company_id}/workers", options)
       end
+
+      # Get a specific worker's profile
+      def worker(worker_id, options = {})
+        get("workers/#{worker_id}", options)
+      end
     end
   end
 end

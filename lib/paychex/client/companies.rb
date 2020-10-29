@@ -5,6 +5,10 @@ module Paychex
       def linked_companies()
         get("companies")
       end
+
+      # Get profile of a linked company
+      def linked_company(company_id)
+        get("companies/#{company_id}")
       end
     end
   end
