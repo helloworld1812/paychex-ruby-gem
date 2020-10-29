@@ -7,7 +7,10 @@ module Paychex
   # @see https://developer.paychex.com/api-documentation-and-exploration/api-references
   class Client < Paychex::API
     require "paychex/client/auth"
+    require "paychex/client/companies"
+
     include Paychex::Client::Auth
+    include Paychex::Client::Companies
 
     attr_accessor :token_timeout
   end
