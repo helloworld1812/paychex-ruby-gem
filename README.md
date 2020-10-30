@@ -59,6 +59,20 @@ client.jobs(company_id)
 
 # Fetch a specific job of a company
 client.job(company_id, job_id)
+
+# Fetch locations for a company
+client.locations(company_id)
+
+# Fetch locations with asof option for a company
+client.locations(company_id, {
+  asof: "2019-01-18T00:00:00Z"  # This will give location/locations data for
+                                # that particular date.
+})
+
+# Fetch a specific location of a company
+client.location(company_id, location_id)
+# Sepcific location method can also be sent the option of asof like in
+# locations method.
 ```
 
 Fetching of workers supports more options along with paginations. For more
@@ -74,7 +88,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 - Pending collection APIs for workers
   - laborassignments
-  - locations
 
 - All other APIs which do inserts or updates.
 
