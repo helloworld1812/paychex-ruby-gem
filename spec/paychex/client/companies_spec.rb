@@ -2,7 +2,7 @@ RSpec.describe "Paychex" do
   describe "linked companies" do
     it "should return list" do
       stub_get("companies").to_return(
-        :body => fixture("company_list.json"),
+        :body => fixture("companies/companies.json"),
         :headers => { :content_type => "application/json; charset=utf-8" },
       )
       client = Paychex.client()
@@ -16,7 +16,7 @@ RSpec.describe "Paychex" do
     it "should return a specific company profile" do
       company_id = "WWEMHMFU"
       stub_get("companies/#{company_id}").to_return(
-        :body => fixture("company.json"),
+        :body => fixture("companies/company.json"),
         :headers => { :content_type => "application/json; charset=utf-8" },
       )
       client = Paychex.client()

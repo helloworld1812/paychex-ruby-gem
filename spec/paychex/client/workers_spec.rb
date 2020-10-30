@@ -3,7 +3,7 @@ RSpec.describe "Paychex" do
     it "should return a list" do
       company_id = "WWEMHMFU"
       stub_get("companies/#{company_id}/workers").to_return(
-        :body => fixture("workers.json"),
+        :body => fixture("workers/workers.json"),
         :headers => { :content_type => "application/json; charset=utf-8" },
       )
       client = Paychex.client()
@@ -17,7 +17,7 @@ RSpec.describe "Paychex" do
     it "should return a specific worker" do
       worker_id = "0EK1BK2AB3ZF"
       stub_get("workers/#{worker_id}").to_return(
-        :body => fixture("worker.json"),
+        :body => fixture("workers/worker.json"),
         :headers => { :content_type => "application/json; charset=utf-8" },
       )
       client = Paychex.client()
