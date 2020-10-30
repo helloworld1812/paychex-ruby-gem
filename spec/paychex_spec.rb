@@ -24,12 +24,6 @@ RSpec.describe Paychex do
     end
   end
 
-  describe ".auto_paginate" do
-    it "should enable auto_paginate by default" do
-      expect(Paychex.auto_paginate).to eq(true)
-    end
-  end
-
   describe ".per_page" do
     it "should be 20 by default" do
       expect(Paychex.per_page).to eq(20)

@@ -13,7 +13,6 @@ module Paychex
       :proxy,
       :environment,
       :user_agent,
-      :auto_paginate,
       :per_page,
       :timeout,
       :open_timeout,
@@ -22,9 +21,6 @@ module Paychex
 
     # By default, don't set an access_token
     DEFAULT_ACCESS_TOKEN = nil
-
-    # By default, enable auto-paginate
-    DEFAULT_AUTO_PAGINATE = true
 
     # By default, return 20 resources per page when there is an pagination.
     DEFAULT_PER_PAGE = 20
@@ -93,7 +89,6 @@ module Paychex
       self.proxy = DEFAULT_PROXY
       self.environment = DEFAULT_ENVIRONMENT
       self.user_agent = DEFAULT_USER_AGENT
-      self.auto_paginate = DEFAULT_AUTO_PAGINATE
       self.per_page = DEFAULT_PER_PAGE
       self.timeout = DEFAULT_TIMEOUT
       self.open_timeout = DEFAULT_OPEN_TIMEOUT
