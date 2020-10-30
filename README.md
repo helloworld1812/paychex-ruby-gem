@@ -53,7 +53,16 @@ client.workers(company_id, {
 
 # Fetch a specific worker's profile
 client.worker(worker_id)
+
+# Fetch jobs for a company
+client.jobs(company_id)
+
+# Fetch a specific job of a company
+client.job(company_id, job_id)
 ```
+
+Fetching of workers supports more options along with paginations. For more
+details refer to the [workers documentation](https://developer.paychex.com/api-documentation-and-exploration/api-references/workers).
 
 ## Development
 
@@ -64,20 +73,19 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Future
 
 - Pending collection APIs for workers
-    - laborassignments
-    - locations
-    - jobs
+  - laborassignments
+  - locations
 
 - All other APIs which do inserts or updates.
 
 - Give all static dropdown options as collection or constants
-    - workerType
-    - employmentType
-    - exemptionType
-    - sex
-    - statusType
-    - statusReason - values are based on statusType
-    - legalIdType
+  - workerType
+  - employmentType
+  - exemptionType
+  - sex
+  - statusType
+  - statusReason - values are based on statusType
+  - legalIdType
 
 - Fix usage of application/x-www-form-urlencoded content type for auth
 - Make host and endpoint URLs support staging and production servers based on

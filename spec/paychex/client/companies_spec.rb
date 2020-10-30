@@ -13,7 +13,7 @@ RSpec.describe "Paychex" do
       expect(response.body["content"].count).to be 1
     end
 
-    it "should return a single company profile" do
+    it "should return a specific company profile" do
       company_id = "WWEMHMFU"
       stub_get("companies/#{company_id}").to_return(
         :body => fixture("company.json"),

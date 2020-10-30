@@ -9,10 +9,12 @@ module Paychex
     require "paychex/client/auth"
     require "paychex/client/companies"
     require "paychex/client/workers"
+    require "paychex/client/jobs"
 
     include Paychex::Client::Auth
     include Paychex::Client::Companies
     include Paychex::Client::Workers
+    include Paychex::Client::Jobs
 
     attr_accessor :token_timeout
   end
