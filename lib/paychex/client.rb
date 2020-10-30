@@ -11,12 +11,14 @@ module Paychex
     require "paychex/client/workers"
     require "paychex/client/jobs"
     require "paychex/client/locations"
+    require "paychex/client/labor_assignments"
 
     include Paychex::Client::Auth
     include Paychex::Client::Companies
     include Paychex::Client::Workers
     include Paychex::Client::Jobs
     include Paychex::Client::Locations
+    include Paychex::Client::LaborAssignments
 
     attr_accessor :token_timeout
   end

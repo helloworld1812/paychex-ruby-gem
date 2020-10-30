@@ -1,0 +1,32 @@
+{
+  "content": [
+    {
+      "laborAssignmentId": "970001701620720",
+      "name": "Assignment 3",
+      "startDate": "2019-01-24T00:00:00Z",
+      "endDate": "2029-12-24T00:00:00Z",
+      "organizationId": "970001701620691",
+      "positionId": "970000180782611",
+      "locationId": "970001701620683"
+    },
+    {
+      "laborAssignmentId": "970001701620607",
+      "name": "Assignement2",
+      "startDate": "2018-12-09T00:00:00Z",
+      "locationId": "970001701620675"
+    },
+    {
+      "laborAssignmentId": "970001701620722",
+      "name": "Assignment 4",
+      "startDate": "2019-01-24T00:00:00Z",
+      "organizationId": "970001701620691",
+      "positionId": "970000180782611"
+    },
+    {
+      "laborAssignmentId": "970001557863345",
+      "name": "MyAssignment1",
+      "startDate": "2018-12-20T00:00:00Z",
+      "positionId": "970000180782611"
+    }
+  ]
+}

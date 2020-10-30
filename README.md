@@ -54,6 +54,12 @@ client.workers(company_id, {
 # Fetch a specific worker's profile
 client.worker(worker_id)
 
+# Fetch labor assignments for a company
+client.labor_assignments(company_id)
+
+# Fetch a specific labor assignment of a company
+client.labor_assignment(company_id, labor_assignment_id)
+
 # Fetch jobs for a company
 client.jobs(company_id)
 
@@ -87,7 +93,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Future
 
 - Pending collection APIs for workers
-  - laborassignments
+  - Worker Job Titles
 
 - All other APIs which do inserts or updates.
 
