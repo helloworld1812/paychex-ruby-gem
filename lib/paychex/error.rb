@@ -38,25 +38,25 @@ module Paychex
     end
   end
 
-  # Raised when wotc.com returns the HTTP status code 400
+  # Raised when api.paychex.com returns the HTTP status code 400
   class BadRequest < Error; end
 
-  # Raised when wotc.com returns the HTTP status code 401
+  # Raised when api.paychex.com returns the HTTP status code 401
   class Unauthorized < Error; end
 
-  # Raised when wotc.com returns the HTTP status code 404
+  # Raised when api.paychex.com returns the HTTP status code 404
   class NotFound < Error; end
 
-  # Raised when wotc.com returns the HTTP status code 500
+  # Raised when api.paychex.com returns the HTTP status code 500
   class InternalServerError < Error; end
 
-  # Raised when wotc.com returns the HTTP status code 502
+  # Raised when api.paychex.com returns the HTTP status code 502
   class BadGateway < Error; end
 
-  # Raised when wotc.com returns the HTTP status code 503
+  # Raised when api.paychex.com returns the HTTP status code 503
   class ServiceUnavailable < Error; end
 
-  # Raised when wotc.com returns the HTTP status code 504
+  # Raised when api.paychex.com returns the HTTP status code 504
   class GatewayTimeout < Error; end
 
   # Raised when client fails to provide required parameters.

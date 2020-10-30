@@ -3,7 +3,7 @@ require "paychex/version"
 module Paychex
   # Defines constants and methods related to configuration
   module Configuration
-    # An array of valid keys in the options hash when configuring a {WOTC::API}
+    # An array of valid keys in the options hash when configuring a {Paychex::API}
     VALID_OPTIONS_KEYS = [
       :access_token,
       :host,
