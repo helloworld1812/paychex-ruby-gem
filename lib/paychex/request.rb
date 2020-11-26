@@ -1,4 +1,4 @@
-require "base64"
+require 'base64'
 
 module Paychex
   # Defines HTTP request methods
@@ -24,27 +24,25 @@ module Paychex
     end
 
     def auth(path, options = {})
-      request(:post, path, {}, options)
+      request(:post, path, options)
     end
 
     private
 
-    def request(method, path, options, post_options = nil)
-      response = connection.send(method) do |request|
+    def request(method, path, options)
+      # FIXME: replace URI.encode with something better, it is deprecated
+      encoded_path = URI.encode(path)
+      connection.send(method) do |request|
         case method
         when :get, :delete
-          request.url(URI.encode(path), options)
+          request.url(encoded_path, options)
+        # TODO: Need to test for more post and put requests
         when :post, :put
-          if post_options.nil?
-            request.path = URI.encode(path)
-          else
-            request.url(URI.encode(path), post_options)
-          end
-          request.body = options
+          request.path = encoded_path
+          request.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+          request.body = URI.encode_www_form(options)
         end
       end
-
-      response
     end
   end
 end
