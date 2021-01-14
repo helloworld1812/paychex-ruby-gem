@@ -1,3 +1,4 @@
+require 'uri'
 require 'base64'
 
 module Paychex
