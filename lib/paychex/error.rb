@@ -1,16 +1,14 @@
 module Paychex
-  # Custom error class for rescuing from all paychec errors
+  # Custom error class for rescuing from all paychex errors
   class Error < StandardError
-    attr_reader :http_method, :url, :errors
+    attr_reader :http_method, :url, :errors, :response, :raw_errors
 
     def initialize(response)
       super
       @response = response.dup
       @http_method = response.method.to_s
       @url = response.url
-      if response.body.is_a?(Hash) && !response.body.empty? && !response.body.fetch("errors", nil).nil?
-        @raw_errors = response.body.fetch("errors")
-      end
+      @raw_errors = response.body.fetch('errors') if response.body.is_a?(Hash) && !response.body.empty? && !response.body.fetch('errors', nil).nil?
     end
 
     def message
@@ -19,22 +17,18 @@ module Paychex
         method: #{@response.method}
         response status: #{@response.status}
         response body: #{@response.response.body}
-        HEREDOC
-    end
-
-    def raw_errors
-      @raw_errors
+      HEREDOC
     end
 
     def error_sentence
       return if @raw_errors.nil?
 
       array = []
-      @raw_errors.each do |_, v|
-        array += v
+      @raw_errors.each do |v|
+        array += "#{v['code']}: #{v['description']}, #{v['resolution']}"
       end
 
-      array.join(" ")
+      array.join(' ')
     end
   end
 
