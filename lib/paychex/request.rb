@@ -25,6 +25,7 @@ module Paychex
     end
 
     def auth(path, options = {})
+      options['Content-Type'] = 'application/x-www-form-urlencoded'
       request(:post, path, options)
     end
 
@@ -40,8 +41,13 @@ module Paychex
         # TODO: Need to test for more post and put requests
         when :post, :put
           request.path = encoded_path
-          request.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-          request.body = URI.encode_www_form(options)
+          content_type = options.delete('Content-Type')
+          if content_type == 'application/x-www-form-urlencoded'
+            request.headers['Content-Type'] = content_type
+            request.body = URI.encode_www_form(options)
+          else
+            request.body = options
+          end
         end
       end
     end

@@ -28,5 +28,27 @@ RSpec.describe 'Paychex' do
       expect(response.body['content'].count).to be 1
       expect(response.body['links'].count).to be 0
     end
+
+    it 'should create a worker with minimal info' do
+      company_id = 'WWEMHMFU'
+      stub_post("companies/#{company_id}/workers").to_return(
+        body: fixture('workers/workers_create.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      data = [{
+        "workerType": 'EMPLOYEE',
+        "name": {
+          "familyName": 'Blast',
+          "givenName": 'Futo'
+        }
+      }]
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      response = client.create_worker(company_id, data)
+      expect(response.status).to eq(200)
+      expect(response.body['metadata']).to be nil
+      expect(response.body['content'].count).to be 1
+      expect(response.body['links'].count).to be 0
+    end
   end
 end

@@ -10,6 +10,11 @@ module Paychex
       def worker(worker_id, options = {})
         get("workers/#{worker_id}", options)
       end
+
+      # Create a worker
+      def create_worker(company_id, options = {})
+        post("companies/#{company_id}/workers", options)
+      end
     end
   end
 end

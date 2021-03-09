@@ -1,0 +1,29 @@
+{
+    "content": [
+        {
+            "workerId": "00JWDGDYKM29IK",
+            "workerType": "EMPLOYEE",
+            "name": {
+                "familyName": "Blast",
+                "givenName": "Futo"
+            },
+            "currentStatus": {
+                "workerStatusId": "00ZAJSWSJ0DY",
+                "statusType": "IN_PROGRESS",
+                "statusReason": "PENDING_HIRE",
+                "effectiveDate": "2021-03-09T00:00:00Z"
+            },
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://sandbox.api.paychex.com/workers/00JWDGDYKM29IK"
+                },
+                {
+                    "rel": "communications",
+                    "href": "https://sandbox.api.paychex.com/workers/00JWDGDYKM29IK/communications"
+                }
+            ]
+        }
+    ],
+    "links": []
+}
