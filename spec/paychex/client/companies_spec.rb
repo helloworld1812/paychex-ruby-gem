@@ -27,5 +27,29 @@ RSpec.describe 'Paychex' do
       expect(response.body['content'].count).to be 1
       expect(response.body['links'].count).to be 0
     end
+
+    it 'should verify access to company' do
+      company_id = 'WWEMHMFU'
+      stub_get("companies/#{company_id}").to_return(
+        body: fixture('companies/company.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      response = client.is_company_linked?(company_id)
+      expect(response).to eq(true)
+    end
+
+    it 'should fail verification of company access' do
+      company_id = 'WWFUXTES'
+      stub_get("companies/#{company_id}").to_return(
+        body: fixture('companies/invalid_company.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      response = client.is_company_linked?(company_id)
+      expect(response).to eq(false)
+    end
   end
 end
