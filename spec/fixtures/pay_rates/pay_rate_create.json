@@ -1,0 +1,18 @@
+{
+  "content": [
+    {
+      "rateId": "54610137",
+      "startDate": "2021-02-17T00:00:00Z",
+      "rateNumber": "RATE_1",
+      "rateType": "HOURLY_RATE",
+      "amount": "40.20",
+      "default": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.paychex.com/workers/WWEMHMFU/compensation/payrates/54610137"
+        }
+      ]
+    }
+  ]
+}

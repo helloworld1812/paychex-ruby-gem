@@ -1,0 +1,76 @@
+{
+  "content": [
+    {
+      "rateId": "54610137",
+      "startDate": "2021-02-17T00:00:00Z",
+      "rateNumber": "RATE_1",
+      "rateType": "HOURLY_RATE",
+      "description": "Security2",
+      "amount": "40.20",
+      "standardHours": "25.25",
+      "standardOvertime": "3.25",
+      "default": true,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.paychex.com/workers/WWEMHMFU/compensation/payrates/54610137"
+        }
+      ]
+    },
+    {
+      "rateId": "54610138",
+      "startDate": "2021-02-18T00:00:00Z",
+      "rateNumber": "RATE_2",
+      "rateType": "HOURLY_RATE",
+      "description": "Update Rate",
+      "amount": "43.22",
+      "standardHours": "10.00",
+      "standardOvertime": "5.00",
+      "default": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.paychex.com/workers/WWEMHMFU/compensation/payrates/54610138"
+        }
+      ]
+    },
+    {
+      "rateId": "54610139",
+      "startDate": "2021-02-19T00:00:00Z",
+      "rateNumber": "RATE_3",
+      "rateType": "HOURLY_RATE",
+      "amount": "30.15",
+      "standardHours": "5.00",
+      "standardOvertime": "1.00",
+      "default": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.paychex.com/workers/WWEMHMFU/compensation/payrates/54610139"
+        }
+      ]
+    },
+    {
+      "rateId": "54610140",
+      "startDate": "2021-02-20T00:00:00Z",
+      "rateNumber": "RATE_4",
+      "rateType": "HOURLY_RATE",
+      "description": "This is for dancing",
+      "amount": "21.22",
+      "standardHours": "5.00",
+      "default": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.paychex.com/workers/WWEMHMFU/compensation/payrates/54610140"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://api.paychex.com/workers/WWEMHMFU/compensation/payrates"
+    }
+  ]
+}
