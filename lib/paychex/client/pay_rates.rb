@@ -1,12 +1,12 @@
 module Paychex
   class Client
     module PayRates
-      # Get a list of workers compensation rates
+      # Get a list of compensation rates for a worker
       def pay_rates(worker_id)
         get("workers/#{worker_id}/compensation/payrates")
       end
 
-      # Get a specific workers compensation rate
+      # Get a worker's specific compensation rate
       def pay_rate(worker_id, pay_rate_id)
         get("workers/#{worker_id}/compensation/payrates/#{pay_rate_id}")
       end
