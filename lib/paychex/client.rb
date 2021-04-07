@@ -14,6 +14,7 @@ module Paychex
     require 'paychex/client/labor_assignments'
     require 'paychex/client/pay_rates'
     require 'paychex/client/federal_tax'
+    require 'paychex/client/direct_deposit'
 
     include Paychex::Client::Auth
     include Paychex::Client::Companies
@@ -23,6 +24,7 @@ module Paychex
     include Paychex::Client::LaborAssignments
     include Paychex::Client::PayRates
     include Paychex::Client::FederalTax
+    include Paychex::Client::DirectDeposit
 
     attr_accessor :token_timeout
   end
