@@ -15,27 +15,6 @@
           "href": "https://api.paychex.com/workers/0EK1BK2AB3ZF/directdeposits/675252"
         }
       ]
-    },
-    {
-      "directDepositId": "675254",
-      "startDate": "2020-08-11T00:00:00Z",
-      "paymentType": "REMAINDER",
-      "accountType": "CHECKING",
-      "routingNumber": "222371863",
-      "accountNumber": "234567",
-      "priority": "99",
-      "links": [
-        {
-          "rel": "self",
-          "href": "https://api.paychex.com/workers/0EK1BK2AB3ZF/directdeposits/675254"
-        }
-      ]
-    }
-  ],
-  "links": [
-    {
-      "rel": "self",
-      "href": "https://api.paychex.com/workers/0EK1BK2AB3ZF/directdeposits"
     }
   ]
 }
