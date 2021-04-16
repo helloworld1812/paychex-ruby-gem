@@ -11,11 +11,19 @@ module Paychex
         get("companies/#{company_id}")
       end
 
-      def is_company_linked?(company_id)
-        content = linked_company(company_id).body.fetch('content')
-        content[0]&.fetch('companyId') == company_id
-      rescue StandardError => e
-        false
+      # Get company's linked status
+      def company_status(company_id)
+        begin
+          content = linked_company(company_id).body.fetch('content')
+          return 'linked' if content[0]&.fetch('companyId') == company_id
+        rescue Paychex::NoAccess => e
+          return 'not-linked'
+        rescue Paychex::NotFound => e
+          return 'invalid'
+        rescue StandardError
+          p 'Paychex Gem: Handle more errors'
+        end
+        'unsupported'
       end
     end
   end

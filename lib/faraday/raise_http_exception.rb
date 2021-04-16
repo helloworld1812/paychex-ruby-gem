@@ -1,4 +1,4 @@
-require "faraday"
+require 'faraday'
 
 module FaradayMiddleWare
   class RaiseHttpException < Faraday::Middleware
@@ -10,19 +10,21 @@ module FaradayMiddleWare
       @app.call(env).on_complete do |response|
         case response.status.to_i
         when 400
-          raise Paychex::BadRequest.new(response)
+          raise Paychex::BadRequest, response
         when 401
-          raise Paychex::Unauthorized.new(response)
+          raise Paychex::Unauthorized, response
+        when 403
+          raise Paychex::NoAccess, response
         when 404
-          raise Paychex::NotFound.new(response)
+          raise Paychex::NotFound, response
         when 500
-          raise Paychex::InternalServerError.new(response)
+          raise Paychex::InternalServerError, response
         when 502
-          raise Paychex::BadGateway.new(response)
+          raise Paychex::BadGateway, response
         when 503
-          raise Paychex::ServiceUnavailable.new(response)
+          raise Paychex::ServiceUnavailable, response
         when 504
-          raise Paychex::GatewayTimeout.new(response)
+          raise Paychex::GatewayTimeout, response
         end
       end
     end

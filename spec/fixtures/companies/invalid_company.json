@@ -1,11 +1,9 @@
 {
-    "content": [],
-    "errors": [
-        {
-            "code": "API-7",
-            "description": "The Company resource or state is invalid. You may have an incorrect resource ID.",
-            "resolution": "Send a valid resource in your request."
-        }
-    ],
-    "links": []
+  "errors": [
+    {
+      "code": "API-7",
+      "description": "The resource or status is invalid. You may have an incorrect resource ID.",
+      "resolution": "Send a valid resource in your request"
+    }
+  ]
 }

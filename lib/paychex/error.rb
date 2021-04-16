@@ -38,6 +38,9 @@ module Paychex
   # Raised when api.paychex.com returns the HTTP status code 401
   class Unauthorized < Error; end
 
+  # Raised when api.paychex.com returns the HTTP status code 403
+  class NoAccess < Error; end
+
   # Raised when api.paychex.com returns the HTTP status code 404
   class NotFound < Error; end
 
