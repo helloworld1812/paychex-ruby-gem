@@ -1,6 +1,6 @@
 require 'faraday'
 
-module FaradayMiddleWare
+module PaychexFaradayMiddleWare
   class RaiseHttpException < Faraday::Middleware
     def initialize(app)
       super(app)

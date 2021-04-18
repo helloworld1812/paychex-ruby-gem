@@ -1,5 +1,5 @@
-require "faraday_middleware"
-require "faraday/raise_http_exception"
+require 'faraday_middleware'
+require 'faraday/raise_http_exception'
 
 module Paychex
   module Connection
@@ -8,11 +8,11 @@ module Paychex
     def connection
       options = {
         headers: {
-          "Accept" => "application/#{format}; charset=utf-8",
-          "User-Agent" => user_agent,
+          'Accept' => "application/#{format}; charset=utf-8",
+          'User-Agent' => user_agent
         },
         proxy: proxy,
-        url: endpoint,
+        url: endpoint
       }.merge(connection_options)
 
       Faraday::Connection.new(options) do |conn|
@@ -22,7 +22,7 @@ module Paychex
         conn.options[:open_timeout] = open_timeout
         conn.request :json
 
-        conn.use FaradayMiddleWare::RaiseHttpException
+        conn.use ::PaychexFaradayMiddleWare::RaiseHttpException
         conn.response :json, content_type: /\bjson$/
         conn.adapter Faraday.default_adapter
       end
