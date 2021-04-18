@@ -20,8 +20,9 @@ module Paychex
           return 'not-linked'
         rescue Paychex::NotFound => e
           return 'invalid'
-        rescue StandardError
+        rescue StandardError => e
           p 'Paychex Gem: Handle more errors'
+          p e
         end
         'unsupported'
       end
