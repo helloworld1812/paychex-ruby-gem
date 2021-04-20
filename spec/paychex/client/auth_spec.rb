@@ -17,6 +17,7 @@ RSpec.describe 'Paychex auth to' do
       expect(response.body['access_token']).to eq('211fe7540e')
       expect(client.access_token).to eq(response.body['access_token'])
       expect(response.body['expires_in']).to be 3600
+      expect(client.token_expired?).to eq(false)
     end
   end
 end
