@@ -19,6 +19,22 @@ module Paychex
       def remove_worker(worker_id, options = {})
         delete("workers/#{worker_id}", options)
       end
+
+      # Get company's linked status
+      def worker_status(company_id, worker_id)
+        begin
+          content = workers(company_id).body.fetch('content')
+          return 'valid' if content.one?{ |worker| worker.fetch('workerId') == worker_id }
+        rescue Paychex::NoAccess => e
+          return 'not-linked'
+        rescue Paychex::NotFound => e
+          return 'invalid'
+        rescue StandardError => e
+          p 'Paychex Gem: Handle more errors'
+          p e
+        end
+        'unsupported'
+      end
     end
   end
 end

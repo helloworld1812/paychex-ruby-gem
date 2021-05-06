@@ -50,5 +50,31 @@ RSpec.describe 'Paychex' do
       expect(response.body['content'].count).to be 1
       expect(response.body['links'].count).to be 0
     end
+
+    it 'should validate a worker_id for a company' do
+      company_id = 'WWEMHMFU'
+      worker_id = '00CMD5KR2BO1T'
+      stub_get("companies/#{company_id}/workers").to_return(
+        body: fixture('workers/workers.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      status = client.worker_status(company_id, worker_id)
+      expect(status).to eq('valid')
+    end
+
+    it 'should not be able to validate a worker_id for a company' do
+      company_id = 'WWEMHMFU'
+      worker_id = '00JWDG8ZL8QJC0'
+      stub_get("companies/#{company_id}/workers").to_return(
+        body: fixture('workers/workers.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      status = client.worker_status(company_id, worker_id)
+      expect(status).not_to eq('valid')
+    end
   end
 end
