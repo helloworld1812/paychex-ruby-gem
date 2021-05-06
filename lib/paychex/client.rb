@@ -10,6 +10,7 @@ module Paychex
     require 'paychex/client/companies'
     require 'paychex/client/workers'
     require 'paychex/client/jobs'
+    require 'paychex/client/job_titles'
     require 'paychex/client/locations'
     require 'paychex/client/labor_assignments'
     require 'paychex/client/pay_rates'
@@ -20,6 +21,7 @@ module Paychex
     include Paychex::Client::Companies
     include Paychex::Client::Workers
     include Paychex::Client::Jobs
+    include Paychex::Client::JobTitles
     include Paychex::Client::Locations
     include Paychex::Client::LaborAssignments
     include Paychex::Client::PayRates
