@@ -69,5 +69,31 @@ RSpec.describe 'Paychex' do
       response = client.company_status(company_id)
       expect(response).to eq('invalid')
     end
+
+    it 'should fetch company details via display id' do
+      display_id = '62725201'
+      stub_get('companies').to_return(
+        body: fixture('companies/companies.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      response = client.details_by_display_id(display_id)
+      expect(response[:message]).to eq('found')
+      expect(response[:company].fetch('displayId')).to eq(display_id)
+    end
+
+    it 'should fetch company details via display id' do
+      display_id = '62725701'
+      stub_get('companies').to_return(
+        body: fixture('companies/companies.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      response = client.details_by_display_id(display_id)
+      expect(response[:message]).to eq('not-found')
+      expect(response[:company]).to be_falsey
+    end
   end
 end

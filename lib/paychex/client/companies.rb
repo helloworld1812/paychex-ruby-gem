@@ -26,6 +26,36 @@ module Paychex
         end
         'unsupported'
       end
+
+      def details_by_display_id(display_id)
+        begin
+          content = linked_companies.body.fetch('content')
+          company = content.find { |company| company.fetch('displayId') == display_id }
+          if company.nil?
+            return {
+              "company": company,
+              "message": 'not-found'
+            }
+          else
+            return {
+              "company": company,
+              "message": 'found'
+            }
+          end
+        rescue Paychex::NoAccess => e
+          return {
+            "company": nil,
+            "message": 'unknown'
+          }
+        rescue StandardError => e
+          p 'Paychex Gem: Handle more errors'
+          p e
+        end
+        {
+          "company": nil,
+          "message": 'unsupported'
+        }
+      end
     end
   end
 end
