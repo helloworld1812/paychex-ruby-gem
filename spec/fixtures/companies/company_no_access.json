@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "code": "API-2",
+      "description": "Your application is not authorized to access the  resource.",
+      "resolution": "Please have your company administrator give your application access to the resource."
+    }
+  ]
+}

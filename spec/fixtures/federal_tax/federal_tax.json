@@ -1,0 +1,10 @@
+{
+  "taxId": "118851387",
+  "filingStatus": "MARRIED_FILING_JOINTLY",
+  "multipleJobs": "false",
+  "dependentsAmount": "123.45",
+  "otherIncome": "23.45",
+  "deductionsAmount": "2.45",
+  "extraWithholdingAmount": "3.45",
+  "taxesWithheld": "true"
+}

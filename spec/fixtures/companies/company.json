@@ -1,0 +1,35 @@
+{
+  "content": [
+    {
+      "companyId": "WWEMHMFU",
+      "displayId": "62725201",
+      "legalName": "SAMPLE CLIENT",
+      "legalId": {
+        "legalIdType": "INFL",
+        "legalIdValue": "MISSING"
+      },
+      "communications": [
+        {
+          "type": "STREET_ADDRESS",
+          "usageType": "BUSINESS",
+          "streetLineOne": "112 PANORAMA ST.",
+          "city": "KASOL",
+          "postalCode": "175105",
+          "countrySubdivisionCode": "HP",
+          "countryCode": "IN"
+        }
+      ],
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://sandbox.api.paychex.com/companies/WWEMHMFU"
+        },
+        {
+          "rel": "workers",
+          "href": "https://sandbox.api.paychex.com/companies/WWEMHMFU/workers"
+        }
+      ]
+    }
+  ],
+  "links": []
+}

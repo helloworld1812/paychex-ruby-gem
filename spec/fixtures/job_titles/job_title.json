@@ -1,0 +1,15 @@
+{
+  "content": [
+    {
+      "jobTitleId": "87186920",
+      "title": "Developer",
+      "startDate": "2020-01-01T00:00:00Z",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.paychex.com/companies/WWEMHMFU/jobtitles/87186920"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+    "content": [
+        {
+            "workerId": "0EK1BK2AB3ZF",
+            "employeeId": "9",
+            "workerType": "EMPLOYEE",
+            "employmentType": "FULL_TIME",
+            "exemptionType": "NON_EXEMPT",
+            "workState": "MP",
+            "birthDate": "1987-11-24T00:00:00Z",
+            "sex": "MALE",
+            "ethnicityCode": "HISPANIC_OR_LATINO",
+            "hireDate": "2014-10-13T00:00:00Z",
+            "clockId": "9",
+            "name": {
+                "familyName": "Sharma",
+                "middleName": "A",
+                "givenName": "Manu",
+                "preferredName": "Manu"
+            },
+            "legalId": {
+                "legalIdType": "SSN",
+                "legalIdValue": "714222524"
+            },
+            "laborAssignmentId": "71422251241318",
+            "locationId": "241770191223",
+            "job": {
+                "jobTitleId": "13531512191412",
+                "title": "Tester"
+            },
+            "organization": {
+                "organizationId": "21120222162219",
+                "name": "Bhopal - Chichli",
+                "links": []
+            },
+            "supervisor": {
+                "workerId": "2222222238112833811283",
+                "name": {
+                    "familyName": "Chaurasia",
+                    "middleName": "J",
+                    "givenName": "Ram"
+                }
+            },
+            "currentStatus": {
+                "workerStatusId": "258161UBXASYWG72232",
+                "statusType": "ACTIVE",
+                "statusReason": "REHIRED",
+                "effectiveDate": "2018-03-25T00:00:00Z"
+            },
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://sandbox.api.paychex.com/workers/0EK1BK2AB3ZF"
+                },
+                {
+                    "rel": "communications",
+                    "href": "https://sandbox.api.paychex.com/workers/0EK1BK2AB3ZF/communications"
+                },
+                {
+                    "rel": "supervisor",
+                    "href": "https://sandbox.api.paychex.com/workers/2222222238112833811283"
+                }
+            ]
+        }
+    ],
+    "links": []
+}

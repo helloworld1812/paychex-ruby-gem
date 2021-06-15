@@ -1,0 +1,15 @@
+{
+  "content": [
+    {
+      "locationId": "970000082973090",
+      "name": "Default Location",
+      "address": {
+        "streetLineOne": "1517 Empire Blvd",
+        "city": "Webster",
+        "postalCode": "14580",
+        "countrySubdivisionCode": "NY",
+        "countryCode": "US"
+      }
+    }
+  ]
+}

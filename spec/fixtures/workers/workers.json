@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "contentItemCount": 2,
+    "pagination": {
+      "offset": 0,
+      "limit": 2,
+      "itemCount": 22,
+      "total": 22
+    }
+  },
+  "content": [
+    {
+      "workerId": "0EK1BK2AB3ZF",
+      "employeeId": "9",
+      "workerType": "EMPLOYEE",
+      "employmentType": "FULL_TIME",
+      "exemptionType": "NON_EXEMPT",
+      "workState": "MP",
+      "birthDate": "1987-11-24T00:00:00Z",
+      "sex": "MALE",
+      "ethnicityCode": "HISPANIC_OR_LATINO",
+      "hireDate": "2014-10-13T00:00:00Z",
+      "clockId": "9",
+      "name": {
+        "familyName": "Sharma",
+        "middleName": "A",
+        "givenName": "Manu",
+        "preferredName": "Manu"
+      },
+      "legalId": {
+        "legalIdType": "SSN",
+        "legalIdValue": "714222524"
+      },
+      "laborAssignmentId": "71422251241318",
+      "locationId": "241770191223",
+      "job": {
+        "jobTitleId": "13531512191412",
+        "title": "Tester"
+      },
+      "organization": {
+        "organizationId": "21120222162219",
+        "name": "Bhopal - Chichli",
+        "links": []
+      },
+      "supervisor": {
+        "workerId": "2222222238112833811283",
+        "name": {
+          "familyName": "Chaurasia",
+          "middleName": "J",
+          "givenName": "Ram"
+        }
+      },
+      "currentStatus": {
+        "workerStatusId": "258161UBXASYWG72232",
+        "statusType": "ACTIVE",
+        "statusReason": "REHIRED",
+        "effectiveDate": "2018-03-25T00:00:00Z"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://sandbox.api.paychex.com/workers/0EK1BK2AB3ZF"
+        },
+        {
+          "rel": "communications",
+          "href": "https://sandbox.api.paychex.com/workers/0EK1BK2AB3ZF/communications"
+        },
+        {
+          "rel": "supervisor",
+          "href": "https://sandbox.api.paychex.com/workers/2222222238112833811283"
+        }
+      ]
+    },
+    {
+      "workerId": "00CMD5KR2BO1T",
+      "employeeId": "3",
+      "workerType": "EMPLOYEE",
+      "employmentType": "PART_TIME",
+      "exemptionType": "NON_EXEMPT",
+      "workState": "MP",
+      "birthDate": "1989-04-16T00:00:00Z",
+      "sex": "MALE",
+      "ethnicityCode": "HISPANIC_OR_LATINO",
+      "hireDate": "2011-08-17T00:00:00Z",
+      "clockId": "3",
+      "name": {
+        "familyName": "Hari",
+        "middleName": "L",
+        "givenName": "Amar"
+      },
+      "legalId": {
+        "legalIdType": "SSN",
+        "legalIdValue": "210315116"
+      },
+      "laborAssignmentId": "71422251241318",
+      "locationId": "241770191223",
+      "job": {
+        "jobTitleId": "151122181412024",
+        "title": "Vice President"
+      },
+      "organization": {
+        "organizationId": "1916181112673",
+        "name": "Bhopal - Barrai",
+        "links": []
+      },
+      "currentStatus": {
+        "workerStatusId": "258161UBXASYWG72232",
+        "statusType": "ACTIVE",
+        "statusReason": "REHIRED",
+        "effectiveDate": "2017-10-03T00:00:00Z"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://sandbox.api.paychex.com/workers/00CMD5KR2BO1T"
+        },
+        {
+          "rel": "communications",
+          "href": "https://sandbox.api.paychex.com/workers/00CMD5KR2BO1T/communications"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://sandbox.api.paychex.com/workers/?companyid=WWEMHMFU&offset=0&limit=2"
+    },
+    {
+      "rel": "next",
+      "href": "https://sandbox.api.paychex.com/workers/?companyid=WWEMHMFU&offset=2&limit=2"
+    }
+  ]
+}

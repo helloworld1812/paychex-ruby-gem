@@ -1,0 +1,15 @@
+{
+  "content": [
+    {
+      "organizationId": "10406898",
+      "name": "Company",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.n1.paychex.com/companies/WWEMHMFU/organizations/10406898"
+        }
+      ]
+    }
+  ],
+  "links": []
+}

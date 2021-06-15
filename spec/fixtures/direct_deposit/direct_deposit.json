@@ -1,0 +1,20 @@
+{
+  "content": [
+    {
+      "directDepositId": "675252",
+      "startDate": "2020-08-11T00:00:00Z",
+      "paymentType": "PERCENTAGE",
+      "accountType": "CHECKING",
+      "value": 75,
+      "routingNumber": "222371863",
+      "accountNumber": "123456",
+      "priority": "1",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.paychex.com/workers/0EK1BK2AB3ZF/directdeposits/675252"
+        }
+      ]
+    }
+  ]
+}

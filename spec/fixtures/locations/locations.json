@@ -1,0 +1,39 @@
+{
+  "content": [
+    {
+      "locationId": "970000082973090",
+      "name": "Default Location",
+      "address": {
+        "streetLineOne": "1517 Empire Blvd",
+        "city": "Webster",
+        "postalCode": "14580",
+        "countrySubdivisionCode": "NY",
+        "countryCode": "US"
+      }
+    },
+    {
+      "locationId": "970000106981852",
+      "name": "Location1",
+      "address": {
+        "streetLineOne": "675 Basket Rd",
+        "city": "Webster",
+        "postalCode": "14580",
+        "countrySubdivisionCode": "NY",
+        "countryCode": "US"
+      },
+      "movedIn": "2017-07-25T00:00:00Z"
+    },
+    {
+      "locationId": "970001451713467",
+      "name": "Location 2",
+      "address": {
+        "streetLineOne": "1891 Ridge Rd",
+        "city": "Webster",
+        "postalCode": "14580",
+        "countrySubdivisionCode": "NY",
+        "countryCode": "US"
+      },
+      "movedIn": "2017-07-25T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "content": [
+    {
+      "jobId": "970001557916902",
+      "jobName": "My job A",
+      "startDate": "2018-12-20T00:00:00Z",
+      "endDate": "2025-12-20T00:00:00Z",
+      "jobNumber": {
+        "segment1": "A1",
+        "segment2": "A2"
+      }
+    }
+  ]
+}
