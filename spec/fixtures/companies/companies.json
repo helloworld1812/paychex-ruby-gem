@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "contentItemCount": 1
+    "contentItemCount": 2
   },
   "content": [
     {
@@ -30,6 +30,36 @@
         {
           "rel": "workers",
           "href": "https://sandbox.api.paychex.com/companies/WWEMHMFU/workers"
+        }
+      ]
+    },
+    {
+      "companyId": "RPELHMDU",
+      "displayId": "98771491",
+      "legalName": "SAMPLE CLIENT 2",
+      "legalId": {
+        "legalIdType": "INFL",
+        "legalIdValue": "MISSING"
+      },
+      "communications": [
+        {
+          "type": "STREET_ADDRESS",
+          "usageType": "BUSINESS",
+          "streetLineOne": "120 ST. PARKS",
+          "city": "LUDIANA",
+          "postalCode": "385125",
+          "countrySubdivisionCode": "PB",
+          "countryCode": "IN"
+        }
+      ],
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://sandbox.api.paychex.com/companies/RPELHMDU"
+        },
+        {
+          "rel": "workers",
+          "href": "https://sandbox.api.paychex.com/companies/RPELHMDU/workers"
         }
       ]
     }
