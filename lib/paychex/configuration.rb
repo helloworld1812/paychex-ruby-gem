@@ -34,7 +34,7 @@ module Paychex
     # By default, the open timeout is 20 seconds.
     DEFAULT_OPEN_TIMEOUT = 20
 
-    DEFAULT_TOKEN_TIMEOUT = 0
+    DEFAULT_TOKEN_TIMEOUT = Time.new
 
     # By default, use sandbox environment
     DEFAULT_HOST = "https://sandbox.api.paychex.com".freeze
