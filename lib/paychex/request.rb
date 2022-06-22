@@ -32,8 +32,7 @@ module Paychex
     private
 
     def request(method, path, options)
-      # FIXME: replace URI.encode with something better, it is deprecated
-      encoded_path = URI.encode(path)
+      encoded_path = Addressable::URI.escape(path)
       connection.send(method) do |request|
         case method
         when :get, :delete
