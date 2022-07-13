@@ -21,6 +21,7 @@ module Paychex
         conn.options[:timeout] = timeout
         conn.options[:open_timeout] = open_timeout
         conn.request :json
+        conn.request :instrumentation, name: 'request.paychex'
 
         conn.use ::PaychexFaradayMiddleWare::RaisePaychexHttpException
         conn.response :json, content_type: /\bjson$/
