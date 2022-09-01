@@ -76,5 +76,62 @@ RSpec.describe 'Paychex' do
       status = client.worker_status(company_id, worker_id)
       expect(status).not_to eq('valid')
     end
+    
+    it 'should create_worker_contacts' do
+      worker_id = '00JWDG8ZL8QJC0'
+      stub_get("workers/#{worker_id}/contacts").to_return(
+        body: fixture('workers/workers_contact.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      data = [
+        {
+          "contactType": {
+            "contactTypeId": "82450"
+          },
+          "relationship": {
+            "relationshipType": {
+              "relationshipTypeId": "458810"
+            },
+            "primary": false,
+            "person": {
+              "name": {
+                "familyName": "Attridge",
+                "givenName": "Mike"
+              },
+              "communication": {
+                "telecom": [
+                  {
+                    "dialCountry": "1",
+                    "dialArea": "585",
+                    "dialNumber": "5552222",
+                    "type": "PHONE",
+                    "usageType": "PERSONAL"
+                  }
+                ],
+                "postal": [
+                  {
+                    "postOfficeBox": "123 Main St",
+                    "city": "Rochester",
+                    "postalCode": "123456",
+                    "countrySubdivisionCode": "NY",
+                    "countryCode": "US"
+                  }
+                ],
+                "email": [
+                  {
+                    "uri": "fake@test.com",
+                    "usageType": "PERSONAL"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      response = client.create_worker_contacts(worker_id, data)
+      expect(response.status).to eq(200)
+    end
   end
 end

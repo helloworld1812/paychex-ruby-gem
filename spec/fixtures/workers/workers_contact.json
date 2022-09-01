@@ -1,0 +1,59 @@
+{
+    "metadata": {
+        "contentItemCount": 1
+    },
+    "content": [
+        {
+            "contactId": "48c0c054-022e-4ad5-a187-f7dfb47af954",
+            "contactType": {
+                "contactTypeId": "82450",
+                "contactTypeName": "Emergency Contact"
+            },
+            "relationship": {
+                "relationshipId": "36b4be0b-eca8-4554-9856-6609f28664b7",
+                "relationWeid": "00JWDGDYKONF0OSH19T2",
+                "relationshipType": {
+                    "relationshipTypeId": "458810",
+                    "relationshipTypeName": "Spouse"
+                },
+                "primary": false,
+                "person": {
+                    "name": {
+                        "familyName": "Attridge",
+                        "givenName": "Mike"
+                    },
+                    "communication": {
+                        "telecom": [
+                            {
+                                "communicationId": "e72e8e85-a5df-438c-b363-ed4d886335fe",
+                                "dialCountry": "1",
+                                "dialArea": "585",
+                                "dialNumber": "5552222",
+                                "type": "PHONE",
+                                "usageType": "PERSONAL"
+                            }
+                        ],
+                        "postal": [
+                            {
+                                "communicationId": "18d6dc83-4a57-492e-b8ba-5de39a811d89",
+                                "postOfficeBox": "123 Main St",
+                                "city": "Rochester",
+                                "postalCode": "123456",
+                                "countrySubdivisionCode": "NY",
+                                "countryCode": "US"
+                            }
+                        ],
+                        "email": [
+                            {
+                                "communicationId": "5986cd27-ca30-4bb1-af35-3d697d136e34",
+                                "uri": "fake@test.com",
+                                "usageType": "PERSONAL"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "links": []
+}
