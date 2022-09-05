@@ -28,6 +28,18 @@ RSpec.describe 'Paychex' do
       expect(response.body['links'].count).to be 0
     end
 
+    it 'company_contact_type should return a list of contact Type Id and relationship Type Id' do
+      company_id = 'WWEMHMFU'
+      stub_get("companies/#{company_id}/contacttypes").to_return(
+        body: fixture('companies/company_contact_types.json'),
+        headers: { content_type: 'application/json; charset=utf-8' }
+      )
+      client = Paychex.client()
+      client.access_token = '211fe7540e'
+      response = client.company_contact_types(company_id)
+      expect(response.status).to eq(200)
+    end
+
     it 'company_status should verify access to company' do
       company_id = 'WWEMHMFU'
       stub_get("companies/#{company_id}").to_return(

@@ -11,6 +11,12 @@ module Paychex
         get("companies/#{company_id}")
       end
 
+      # Get company contact types
+      def company_contact_types(company_id)
+        get("companies/#{company_id}/contacttypes")
+      end
+
+
       # Get company's linked status
       def company_status(company_id)
         begin
