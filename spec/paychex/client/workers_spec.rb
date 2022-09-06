@@ -79,7 +79,7 @@ RSpec.describe 'Paychex' do
     
     it 'should create_worker_contacts' do
       worker_id = '00JWDG8ZL8QJC0'
-      stub_get("workers/#{worker_id}/contacts").to_return(
+      stub_post("workers/#{worker_id}/contacts").to_return(
         body: fixture('workers/workers_contact.json'),
         headers: { content_type: 'application/json; charset=utf-8' }
       )
@@ -132,6 +132,9 @@ RSpec.describe 'Paychex' do
       client.access_token = '211fe7540e'
       response = client.create_worker_contacts(worker_id, data)
       expect(response.status).to eq(200)
+      expect(response.body['metadata'].count).to be 1
+      expect(response.body['content'].count).to be 1
+      expect(response.body['links'].count).to be 0
     end
   end
 end
