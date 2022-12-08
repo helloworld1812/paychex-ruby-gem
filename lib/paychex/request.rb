@@ -1,5 +1,6 @@
 require 'uri'
 require 'base64'
+require 'addressable/uri'
 
 module Paychex
   # Defines HTTP request methods
