@@ -37,7 +37,11 @@ RSpec.describe 'Paychex' do
       client = Paychex.client()
       client.access_token = '211fe7540e'
       response = client.company_contact_types(company_id)
+      content = (response.body).fetch('content')
+      contact_types = content.first
       expect(response.status).to eq(200)
+      expect(contact_types.fetch('contactTypeName')).to eq("Emergency Contact")
+      expect(contact_types.fetch('relationshipTypes').count).to eq(7)
     end
 
     it 'company_status should verify access to company' do

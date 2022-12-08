@@ -131,10 +131,15 @@ RSpec.describe 'Paychex' do
       client = Paychex.client()
       client.access_token = '211fe7540e'
       response = client.create_worker_contacts(worker_id, data)
+      content = (response.body)['content']
+      info = content.first
+      communication = info['relationship']['person']['communication']['telecom'].first
       expect(response.status).to eq(200)
       expect(response.body['metadata'].count).to be 1
       expect(response.body['content'].count).to be 1
       expect(response.body['links'].count).to be 0
+      expect(info['relationship']['person']['name']['givenName']).to eq('Mike')
+      expect(communication['dialNumber']).to eq("5552222")
     end
   end
 end
