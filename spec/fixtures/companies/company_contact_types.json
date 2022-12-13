@@ -1,0 +1,39 @@
+{
+    "content": [
+        {
+            "contactTypeId": "82450",
+            "contactTypeName": "Emergency Contact",
+            "relationshipTypes": [
+                {
+                    "relationshipTypeId": "458810",
+                    "relationshipTypeName": "Spouse"
+                },
+                {
+                    "relationshipTypeId": "458820",
+                    "relationshipTypeName": "Parent"
+                },
+                {
+                    "relationshipTypeId": "458830",
+                    "relationshipTypeName": "Sibling"
+                },
+                {
+                    "relationshipTypeId": "458840",
+                    "relationshipTypeName": "Child"
+                },
+                {
+                    "relationshipTypeId": "458740",
+                    "relationshipTypeName": "Friend"
+                },
+                {
+                    "relationshipTypeId": "458725",
+                    "relationshipTypeName": "Domestic partner"
+                },
+                {
+                    "relationshipTypeId": "458800",
+                    "relationshipTypeName": "Other"
+                }
+            ]
+        }
+    ],
+    "links": []
+}

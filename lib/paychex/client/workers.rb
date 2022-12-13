@@ -16,6 +16,10 @@ module Paychex
         post("companies/#{company_id}/workers", options)
       end
 
+      def create_worker_contacts(worker_id, options = {})
+        post("workers/#{worker_id}/contacts", options)
+      end  
+
       def remove_worker(worker_id, options = {})
         delete("workers/#{worker_id}", options)
       end
