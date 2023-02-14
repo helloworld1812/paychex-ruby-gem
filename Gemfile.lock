@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paychex (0.1.2)
+    paychex (0.2.1)
       addressable
       faraday
       faraday_middleware
@@ -62,4 +62,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.3.4
+   2.4.4
