@@ -8,7 +8,7 @@ module Paychex
     def connection
       options = {
         headers: {
-          'Accept' => "application/#{format}; charset=utf-8",
+          'Accept' => "application/#{format}",
           'User-Agent' => user_agent
         },
         proxy: proxy,
