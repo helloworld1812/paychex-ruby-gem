@@ -28,11 +28,11 @@ module Paychex
     # By default, don't set connection options.
     DEFAULT_CONNECTION_OPTIONS = {}
 
-    # Default timeout time is 20 seconds
-    DEFAULT_TIMEOUT = 20
+    # Default timeout time is 60 seconds
+    DEFAULT_TIMEOUT = 60
 
-    # By default, the open timeout is 20 seconds.
-    DEFAULT_OPEN_TIMEOUT = 20
+    # By default, the open timeout is 60 seconds.
+    DEFAULT_OPEN_TIMEOUT = 60
 
     DEFAULT_TOKEN_TIMEOUT = Time.new
 
