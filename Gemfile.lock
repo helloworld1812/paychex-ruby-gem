@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    paychex (0.2.2)
+    paychex (0.3.0)
       addressable
       faraday
       faraday_middleware
