@@ -35,8 +35,8 @@ module Paychex
 
       def details_by_display_id(display_id)
         begin
-          content = linked_companies.body.fetch('content')
-          company = content.find { |company| company.fetch('displayId') == display_id }
+          content = get("companies?displayId=#{display_id}").body.fetch('content')
+          company = content[0]
           return {
             "company": company,
             "message": company.nil? ? 'not-found' : 'found'
@@ -59,9 +59,9 @@ module Paychex
       def details_by_display_ids(display_ids)
         ret = {}
         begin
-          content = linked_companies.body.fetch('content')
           display_ids.each do |display_id|
-            company = content.find { |company| company.fetch('displayId') == display_id }
+            content = details_by_display_id(display_id)
+            company = content[:company]
             ret[display_id.to_s] = {
               "company": company,
               "message": company.nil? ? 'not-found' : 'found'
