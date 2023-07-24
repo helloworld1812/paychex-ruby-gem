@@ -38,9 +38,16 @@ module Paychex
         begin
           content = get("companies?displayId=#{display_id}").body.fetch('content')
           company = content[0]
+
           return {
             "company": company,
-            "message": company.nil? ? 'not-found' : 'found'
+            "message": 'found'
+          }
+
+        rescue Paychex::NotFound => e
+          return {
+            "company": nil,
+            "message": 'not-found'
           }
         rescue Paychex::NoAccess => e
           return {
