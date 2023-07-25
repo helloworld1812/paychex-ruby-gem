@@ -45,12 +45,12 @@ module Paychex
         rescue Paychex::NotFound => e
           return {
             "company": nil,
-            "message": 'not found'
+            "message": 'not-found'
           }
         rescue Paychex::NoAccess => e
           return {
             "company": nil,
-            "message": 'not found'
+            "message": 'not-found'
           }
         rescue StandardError => e
           p 'Paychex Gem: Handle more errors'
