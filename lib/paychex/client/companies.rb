@@ -40,12 +40,17 @@ module Paychex
           company = content[0]
           return {
             "company": company,
-            "message": company.nil? ? 'not-found' : 'found'
+            "message": 'found'
+          }
+        rescue Paychex::NotFound => e
+          return {
+            "company": nil,
+            "message": 'not-found'
           }
         rescue Paychex::NoAccess => e
           return {
             "company": nil,
-            "message": 'unknown'
+            "message": 'not-found'
           }
         rescue StandardError => e
           p 'Paychex Gem: Handle more errors'
