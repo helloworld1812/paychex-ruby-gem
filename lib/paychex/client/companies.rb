@@ -36,7 +36,7 @@ module Paychex
 
       def details_by_display_id(display_id)
         begin
-          content = get("companies?displayId=#{display_id}").body.fetch('content')
+          content = get("companies?displayid=#{display_id}").body.fetch('content')
           company = content[0]
           return {
             "company": company,
