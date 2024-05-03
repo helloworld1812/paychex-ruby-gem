@@ -22,10 +22,10 @@ module Paychex
             companies_content = companies_content.select { |c| c['hasPermission'] } if companies_content
             response_content += companies_content
 
-            if current_page < no_of_pages
-              opts = { limit: limit, offset: (page - 1) * limit }
+            current_page += 1
+            if current_page <= no_of_pages
+              opts = { limit: limit, offset: (current_page - 1) * limit }
               response = companies(opts)
-              current_page += 1
             else
               break
             end
