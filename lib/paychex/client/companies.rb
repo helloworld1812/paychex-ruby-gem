@@ -3,8 +3,43 @@ module Paychex
     module Companies
       # Get a list of all the linked companies
       # This will be unavailable once we have 200+ linked companies
-      def linked_companies
-        get('companies')
+      def linked_companies(options)
+        limit = options[:limit] || 100
+        initial_opts = { limit: limit, offset: 0 }
+
+        # first API call to get companies on first page. This helps to determine total no. of pages
+        response = get_api('companies', initial_opts)
+        response_content = []
+
+        if response && response.body
+          companies_count = response.body.fetch('metadata').fetch('pagination').fetch('total')
+
+          return response_content unless companies_count
+
+          no_of_pages = (companies_count.to_f / limit).ceil
+
+          companies_content = response.body.fetch('content').to_a
+          companies_content = companies_content.select { |c| c['hasPermission'] } if companies_content
+
+          response_content += companies_content
+
+          # next API calls
+          if no_of_pages >= 2
+            (2..no_of_pages).each do |page|
+              opts = { limit: limit, offset: (page - 1) * limit }
+              next_response = get_api('companies', opts)
+
+              break unless next_response && next_response.body
+
+              companies_content = next_response.body.fetch('content').to_a
+              companies_content = companies_content.select { |c| c['hasPermission'] } if companies_content
+
+              response_content += companies_content
+            end
+          end
+        end
+
+        response_content
       end
 
       # Get profile of a linked company
@@ -83,6 +118,15 @@ module Paychex
         end
         ret['message'] = 'unsupported'
         ret
+      end
+    end
+
+    # Call API with pagination parameters
+    def get_api(endpoint, options)
+      begin
+        get(endpoint, options)
+      rescue => e
+        nil
       end
     end
   end
