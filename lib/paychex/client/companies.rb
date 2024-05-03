@@ -2,41 +2,36 @@ module Paychex
   class Client
     module Companies
       # Get a list of all the linked companies
-      # This will be unavailable once we have 200+ linked companies
-      def linked_companies(options)
-        limit = options[:limit] || 100
-        initial_opts = { limit: limit, offset: 0 }
-
-        # first API call to get companies on first page. This helps to determine total no. of pages
-        response = get_api('companies', initial_opts)
+      def linked_companies
+        limit = per_page
+        opts = { limit: limit, offset: 0 }
         response_content = []
+        current_page = 1
 
-        if response && response.body
-          companies_count = response.body.fetch('metadata').fetch('pagination').fetch('total')
+        response = companies(opts)
 
-          return response_content unless companies_count
+        begin
+          while response && response.body
+            companies_count = response.body.fetch('metadata').fetch('pagination').fetch('total')
 
-          no_of_pages = (companies_count.to_f / limit).ceil
+            break unless companies_count
 
-          companies_content = response.body.fetch('content').to_a
-          companies_content = companies_content.select { |c| c['hasPermission'] } if companies_content
+            no_of_pages = (companies_count.to_f / limit).ceil
 
-          response_content += companies_content
+            companies_content = response.body.fetch('content').to_a
+            companies_content = companies_content.select { |c| c['hasPermission'] } if companies_content
+            response_content += companies_content
 
-          # next API calls
-          if no_of_pages >= 2
-            (2..no_of_pages).each do |page|
+            if current_page < no_of_pages
               opts = { limit: limit, offset: (page - 1) * limit }
-              next_response = get_api('companies', opts)
-
-              break unless next_response && next_response.body
-
-              companies_content = next_response.body.fetch('content').to_a
-              companies_content = companies_content.select { |c| c['hasPermission'] } if companies_content
-
-              response_content += companies_content
+              response = companies(opts)
+              current_page += 1
+            else
+              break
             end
           end
+        rescue StandardError => e
+          return response_content
         end
 
         response_content
@@ -121,10 +116,9 @@ module Paychex
       end
     end
 
-    # Call API with pagination parameters
-    def get_api(endpoint, options)
+    def companies(options)
       begin
-        get(endpoint, options)
+        get('companies', options)
       rescue => e
         nil
       end

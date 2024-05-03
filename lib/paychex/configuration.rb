@@ -23,7 +23,7 @@ module Paychex
     DEFAULT_ACCESS_TOKEN = nil
 
     # By default, return 20 resources per page when there is an pagination.
-    DEFAULT_PER_PAGE = 20
+    DEFAULT_PER_PAGE = 100
 
     # By default, don't set connection options.
     DEFAULT_CONNECTION_OPTIONS = {}

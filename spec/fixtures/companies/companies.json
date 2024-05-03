@@ -1,12 +1,19 @@
 {
   "metadata": {
-    "contentItemCount": 2
+    "contentItemCount": 2,
+    "pagination": {
+      "offset": 0,
+      "limit": 100,
+      "itemCount": 2,
+      "total": 2
+  }
   },
   "content": [
     {
       "companyId": "WWEMHMFU",
       "displayId": "62725201",
       "legalName": "SAMPLE CLIENT",
+      "hasPermission": true,
       "legalId": {
         "legalIdType": "INFL",
         "legalIdValue": "MISSING"
@@ -37,6 +44,7 @@
       "companyId": "RPELHMDU",
       "displayId": "98771491",
       "legalName": "SAMPLE CLIENT 2",
+      "hasPermission": false,
       "legalId": {
         "legalIdType": "INFL",
         "legalIdValue": "MISSING"

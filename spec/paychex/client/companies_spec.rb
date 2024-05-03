@@ -1,16 +1,20 @@
 RSpec.describe 'Paychex' do
   describe 'companies' do
     it 'linked_companies should return list' do
-      stub_get('companies').to_return(
-        body: fixture('companies/companies.json'),
-        headers: { content_type: 'application/json; charset=utf-8' }
-      )
+      stub_get('companies?limit=100&offset=0').
+        to_return(
+          status: 200,
+          body: fixture('companies/companies.json'),
+          headers: { "Content-Type": "application/json"}
+        )
+
       client = Paychex.client()
       client.access_token = '211fe7540e'
-      response = client.linked_companies
-      expect(response.status).to eq(200)
-      expect(response.body['metadata']['contentItemCount']).to be 2
-      expect(response.body['content'].count).to be 2
+      linked_companies = client.linked_companies
+
+      expect(linked_companies.count).to be 1
+      expect(linked_companies.first).to have_key('hasPermission')
+      expect(linked_companies.first.fetch('hasPermission')).to be(true)
     end
 
     it 'linked_company should return a specific company profile' do
