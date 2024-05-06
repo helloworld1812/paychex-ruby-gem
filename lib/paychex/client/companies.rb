@@ -116,6 +116,8 @@ module Paychex
       end
     end
 
+    private
+
     def companies(options)
       begin
         get('companies', options)

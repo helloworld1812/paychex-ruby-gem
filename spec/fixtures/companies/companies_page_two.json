@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "contentItemCount": 5,
+    "pagination": {
+      "offset": 5,
+      "limit": 5,
+      "itemCount": 10,
+      "total": 10
+    }
+  },
+  "content": [
+    {
+      "companyId": "MDURPELH",
+      "displayId": "98771493",
+      "legalName": "SAMPLE CLIENT 6",
+      "hasPermission": true,
+      "legalId": {
+        "legalIdType": "INFL",
+        "legalIdValue": "MISSING"
+      },
+      "communications": [
+        {
+          "type": "STREET_ADDRESS",
+          "usageType": "BUSINESS",
+          "streetLineOne": "122 ST. PARKS",
+          "city": "LUDIANA",
+          "postalCode": "385127",
+          "countrySubdivisionCode": "PB",
+          "countryCode": "IN"
+        }
+      ],
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://sandbox.api.paychex.com/companies/MDURPELH"
+        },
+        {
+          "rel": "workers",
+          "href": "https://sandbox.api.paychex.com/companies/MDURPELH/workers"
+        }
+      ]
+    },
+    {
+      "companyId": "ELHRPMDU",
+      "displayId": "98771494",
+      "legalName": "SAMPLE CLIENT 7",
+      "hasPermission": true,
+      "legalId": {
+        "legalIdType": "INFL",
+        "legalIdValue": "MISSING"
+      },
+      "communications": [
+        {
+          "type": "STREET_ADDRESS",
+          "usageType": "BUSINESS",
+          "streetLineOne": "123 ST. PARKS",
+          "city": "LUDIANA",
+          "postalCode": "385128",
+          "countrySubdivisionCode": "PB",
+          "countryCode": "IN"
+        }
+      ],
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://sandbox.api.paychex.com/companies/ELHRPMDU"
+        },
+        {
+          "rel": "workers",
+          "href": "https://sandbox.api.paychex.com/companies/ELHRPMDU/workers"
+        }
+      ]
+    },
+    {
+      "companyId": "UULHMDPU",
+      "hasPermission": false
+    },
+    {
+      "companyId": "TPEHJERU",
+      "hasPermission": false
+    },
+    {
+      "companyId": "RWQJERU",
+      "hasPermission": false
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://sandbox.api.paychex.com/companies/"
+    }
+  ]
+}

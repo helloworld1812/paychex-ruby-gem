@@ -1,18 +1,31 @@
 RSpec.describe 'Paychex' do
   describe 'companies' do
-    it 'linked_companies should return list' do
-      stub_get('companies?limit=100&offset=0').
+    before do
+      allow(Paychex).to receive(:per_page).and_return(5)
+
+      # Stub the first page of /companies API response
+      stub_get('companies?limit=5&offset=0').
         to_return(
           status: 200,
           body: fixture('companies/companies.json'),
           headers: { "Content-Type": "application/json"}
         )
+      
+      # Stub the second page of /companies API response
+      stub_get('companies?limit=5&offset=5').
+        to_return(
+          status: 200,
+          body: fixture('companies/companies_page_two.json'),
+          headers: { "Content-Type": "application/json"}
+        )
+    end
 
+    it 'linked_companies should return consolidated list of companies spread across multiple pages' do
       client = Paychex.client()
       client.access_token = '211fe7540e'
       linked_companies = client.linked_companies
 
-      expect(linked_companies.count).to be 1
+      expect(linked_companies.count).to be 5
       expect(linked_companies.first).to have_key('hasPermission')
       expect(linked_companies.first.fetch('hasPermission')).to be(true)
     end
