@@ -1,5 +1,3 @@
-require "byebug"
-
 RSpec.describe Paychex do
   it "has a version number" do
     expect(Paychex::VERSION).not_to be nil

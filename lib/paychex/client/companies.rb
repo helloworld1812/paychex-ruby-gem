@@ -12,11 +12,14 @@ module Paychex
 
         begin
           while response && response.body
-            companies_count = response.body.fetch('metadata').fetch('pagination').fetch('total')
+            companies_count = response.body.fetch('metadata').fetch('pagination').fetch('total') rescue nil
 
-            break unless companies_count
-
-            no_of_pages = (companies_count.to_f / limit).ceil
+            if companies_count
+              no_of_pages = (companies_count.to_f / limit).ceil
+            else
+              # Consider no_of_pages = 1 unless pagination - total node is missing
+              no_of_pages = 1
+            end
 
             companies_content = response.body.fetch('content').to_a
             companies_content = companies_content.select { |c| c['hasPermission'] } if companies_content
