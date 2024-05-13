@@ -12,11 +12,11 @@ module Paychex
 
         begin
           while response && response.body
-            companies_count = response.body.fetch('metadata').fetch('pagination').fetch('total') rescue nil
+            begin
+              companies_count = response.body.fetch('metadata').fetch('pagination').fetch('total')
 
-            if companies_count
               no_of_pages = (companies_count.to_f / limit).ceil
-            else
+            rescue KeyError => e
               # Consider no_of_pages = 1 unless pagination - total node is missing
               no_of_pages = 1
             end
